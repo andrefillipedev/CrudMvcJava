@@ -31,7 +31,7 @@ public class GerenciadorConexaoMysql implements GerenciadorConexao {
 		String password = "F6cmULyB5RyjwtBW";
 		Connection c;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			c = DriverManager.getConnection(url, user, password);
 		}catch(SQLException e) {
 			throw new ConexaoException(e.getMessage());

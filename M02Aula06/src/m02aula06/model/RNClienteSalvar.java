@@ -14,7 +14,7 @@ public class RNClienteSalvar {
 	}
 
 	/**
-	 * validar os dados, preenchimento, valores
+	 * validar os dados, preenchimento, valores vazios
 	 * @param cliente
 	 * @throws Exception
 	 */
@@ -36,18 +36,7 @@ public class RNClienteSalvar {
 	 * @param cliente
 	 */
 	private void verificar(Cliente cliente) throws Exception {
-		DAOCliente dao = new DAOCliente();
-		try {
-			Cliente aux = dao.consulta(cliente);
-			if (aux != null) {
-				throw new Exception("CPF duplicado");
-			}
-		} catch (ConexaoException e) {
-			throw new Exception(
-					"Estamos com dificuldades. Tente novamente mais tarde (daqui há 12horas)<br/>" + e.getMessage());
-		} catch (RepositoryException e) {
-			throw new Exception("O programador fez kk. Nem adianta tentar de novo.<br/>" + e.getMessage());
-		}
+		new RNClienteConsultar().consultar(cliente);
 	}
 
 	/**
