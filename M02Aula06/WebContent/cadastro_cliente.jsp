@@ -37,6 +37,7 @@
 			<input type="text" name="telefone" id="telefone" /><br/>
 				
 			<input type="submit" value="Salvar" />
+			<a href="ClienteController?listar=1">Listar clientes</a>
 		</form>
 			* Campos Obrigatórios
 	</body>
